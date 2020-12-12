@@ -1,19 +1,34 @@
 package com.twitter.twitterback;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 @SpringBootApplication
 public class TwitterbackApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(TwitterbackApplication.class, args);
+		testDb();
 	}
 
-	@GetMapping("/hello")
-		public String hello(@RequestParam(value = "name", defaultValue = "World") String name) {
-		return String.format("Hello %s!", name);
+	static void testDb(){
+		DB db = new DB();
+		Connection conn = db.connect();
+
+		PreparedStatement preparedStatement = null;
+		try {
+			String query = "SELECT 'db works' as col;";
+			preparedStatement = conn.prepareStatement(query);
+			ResultSet resultSet = preparedStatement.executeQuery();
+			resultSet.next();
+			System.out.println(resultSet.getString(1));
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+
 	}
 }
