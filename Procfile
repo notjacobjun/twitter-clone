@@ -1,1 +1,1 @@
-web: java -jar heroku/twitterback.jar
+web: mvn clean compile exec:java
