@@ -24,6 +24,7 @@ public class TweetController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        //TODO tweedId should be fetched from url shortener service.
         assert tweet1 != null;
         tweetRepository.insert(tweet1);
         return true;

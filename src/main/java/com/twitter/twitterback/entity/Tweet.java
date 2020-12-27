@@ -1,5 +1,6 @@
 package com.twitter.twitterback.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.twitter.twitterback.utils.OptimizedBooleanDeserializer;
 import com.twitter.twitterback.utils.OptimizedTimestampDeserializer;
@@ -18,6 +19,7 @@ public class Tweet {
     @PrimaryKey
     @Column("id")
     @GeneratedValue
+    @JsonIgnore
     private String id;
     @Column("parent_tweet_id")
     private String parentTweetId;
