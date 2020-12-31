@@ -10,7 +10,9 @@ import org.springframework.data.cassandra.repository.config.EnableCassandraRepos
 @EnableCassandraRepositories(basePackages = "com.twitter.twitterback.repository")
 public class CassandraConfig  {
     public static CqlSession cqlSession;
-    public @Bean static CqlSession session(){
+
+    @Bean
+    public static CqlSession session(){
          cqlSession=CqlSession.builder().withCloudSecureConnectBundle(TwitterbackApplication.class.getClassLoader().getResource("secure-connect-twitterclone.zip")).withAuthCredentials("twitterclone","12341234aA?").withKeyspace("twt").build();
       return cqlSession;
     }
