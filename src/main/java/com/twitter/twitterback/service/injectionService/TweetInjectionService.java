@@ -1,4 +1,4 @@
-package com.twitter.twitterback.injectionservice;
+package com.twitter.twitterback.service.injectionService;
 
 // functionality: Take the tweet from the user when they click submit and enter it into the Cassandra
 // database
