@@ -91,14 +91,26 @@
 				<artifactId>java-dotenv</artifactId>
 				<version>5.2.2</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/com.datastax.cassandra/cassandra-driver-core -->
-
-		<!-- https://mvnrepository.com/artifact/org.springframework.data/spring-data-cassandra -->
+<!--		 https://mvnrepository.com/artifact/com.datastax.cassandra/cassandra-driver-core -->
 <!--		<dependency>-->
-<!--			<groupId>org.springframework.data</groupId>-->
-<!--			<artifactId>spring-data-cassandra</artifactId>-->
-<!--			<version>3.1.2</version>-->
+<!--			<groupId>com.datastax.cassandra</groupId>-->
+<!--			<artifactId>cassandra-driver-core</artifactId>-->
+<!--			<version>4.0.0</version>-->
 <!--		</dependency>-->
+
+<!--		 Cassandra Junit tester, similar to DBUnit-->
+<!--		<dependency>-->
+<!--			<groupId>org.cassandraunit</groupId>-->
+<!--			<artifactId>cassandra-unit</artifactId>-->
+<!--			<version>4.3.1.0</version>-->
+<!--		</dependency>-->
+
+<!--		 https://mvnrepository.com/artifact/org.springframework.data/spring-data-cassandra -->
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-cassandra</artifactId>
+			<version>3.1.2</version>
+		</dependency>
 		<dependency>
 			<groupId>jakarta.persistence</groupId>
 			<artifactId>jakarta.persistence-api</artifactId>
@@ -120,11 +132,14 @@
 <!--			<artifactId>native-protocol</artifactId>-->
 <!--			<version>1.4.11</version>-->
 <!--		</dependency>-->
-		<dependency>
-			<groupId>org.springframework.data</groupId>
-			<artifactId>spring-data-cassandra</artifactId>
-			<version>3.1.2</version>
-		</dependency>
+
+
+
+<!--		<dependency>-->
+<!--			<groupId>org.springframework.data</groupId>-->
+<!--			<artifactId>spring-data-cassandra</artifactId>-->
+<!--			<version>3.1.2</version>-->
+<!--		</dependency>-->
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
