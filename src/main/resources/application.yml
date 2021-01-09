@@ -1,4 +1,5 @@
-security:
-  ignored:
+logging:
 
-    =/**
+  file:
+    name:
+      ${APPDATA}/tmp/logfile.log

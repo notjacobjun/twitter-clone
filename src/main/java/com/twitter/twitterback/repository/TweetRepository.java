@@ -6,9 +6,9 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Repository
+
 public interface TweetRepository extends CassandraRepository<Tweet,Integer> {
-    List<Tweet>  findById(final int id);
+    Tweet  findById(final int id);
 
     List<Tweet> findByUserId(final int user_Id);
 }

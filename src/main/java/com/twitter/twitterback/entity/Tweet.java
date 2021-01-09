@@ -2,7 +2,6 @@ package com.twitter.twitterback.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.twitter.twitterback.utils.OptimizedBooleanDeserializer;
 import com.twitter.twitterback.utils.OptimizedTimestampDeserializer;
 import lombok.Data;
 import org.springframework.data.cassandra.core.mapping.Column;
@@ -20,12 +19,11 @@ public class Tweet {
     @Column("id")
     @GeneratedValue
     @JsonIgnore
-    private String id;
+    private int id;
     @Column("parent_tweet_id")
-    private String parentTweetId;
-    @Column("has_parent")
-    @JsonDeserialize(using= OptimizedBooleanDeserializer.class)
-    private boolean hasParent;
+    private int parentTweetId;
+    @Column("tweet_type")
+    private String  tweetType;
     @Column("user_id")
     private int userId;
     @Column("content")
@@ -35,18 +33,18 @@ public class Tweet {
     @Column("creation_date")
     @JsonDeserialize(using= OptimizedTimestampDeserializer.class)
     private java.sql.Timestamp creationDate;
-
+    @Column("status")
+    private String status;
     public Tweet() {
 
     }
 
-    @Column("status")
-    private String status;
 
-    public Tweet(String id, String parentTweetId, boolean hasParent, int userId, String content, String pathToMedia, Timestamp creationDate, String status) {
+
+    public Tweet(int id, int parentTweetId, String tweetType, int userId, String content, String pathToMedia, Timestamp creationDate, String status) {
         this.id = id;
         this.parentTweetId = parentTweetId;
-        this.hasParent = hasParent;
+        this.tweetType = tweetType;
         this.userId = userId;
         this.content = content;
         this.pathToMedia = pathToMedia;
