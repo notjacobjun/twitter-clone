@@ -3,7 +3,7 @@ package com.twitter.twitterback.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.twitter.twitterback.entity.Tweet;
-import com.twitter.twitterback.injectionservice.TweetInjectionServiceImpl;
+import com.twitter.twitterback.service.injectionService.TweetInjectionServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
